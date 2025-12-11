@@ -1,15 +1,32 @@
 from pydantic import BaseModel, field_validator, computed_field
+from datetime import date
 
 class UserSchema(BaseModel):
     first_name: str
     last_name: str
     age: int
+    date_registration: date
+
+
+    @field_validator('first_name')
+    @classmethod
+    def check_first_name(cls, value):
+        if 3 < len(value) > 12:
+            raise ValueError('Not a valid first name')
+        return value
+
+    @field_validator('last_name')
+    @classmethod
+    def check_last_name(cls, value):
+        if 3 < len(value) > 12:
+            raise ValueError('Not a valid last name')
+        return value
 
     @field_validator('age', mode="after")
     @classmethod
     def check_age(cls, value):
         if value < 18:
-            raise ValueError('age must be at least 18')
+            raise ValueError('18+')
         return value
 
     @computed_field
