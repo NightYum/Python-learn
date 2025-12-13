@@ -54,3 +54,6 @@ to_json = user_mikhail.model_dump_json()
 
 print(to_dict,type(to_dict))
 print(to_json,type(to_json))
+
+try:
+    user = UserSchema(id=1, first_name="John", last_name="Doe", age=18)
