@@ -56,3 +56,12 @@ print(list_names)
 # print(list_names)
 
 print("<>".join("list_names"))
+
+nested = [[1, 2], [3, 4], [5, 6]]
+nested[1].extend([7, 8])
+print(nested)
+
+# По первому элементу идет сравнение
+nested = [[3, 7, 1], [9, 2, 5], [40, 6, 8]]
+max_value = max(nested)
+print(max_value)
