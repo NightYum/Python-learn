@@ -24,4 +24,9 @@ my_stack.push(15)
 b = []
 
 print(my_stack.get_min_value())
-callable()
+# callable()
+
+dict1 = {"Misha": 18, "No": 20}
+print(list(dict1), list(dict1.values()))
+print(dict1.keys(), dict1.values())
+print(dict1.items())
